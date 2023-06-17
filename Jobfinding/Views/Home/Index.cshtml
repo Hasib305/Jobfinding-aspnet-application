@@ -1,8 +1,159 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill_Job</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for the homepage */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 30px;
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+        }
+
+            .cta-button:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+
+        .feature-box {
+            text-align: center;
+            padding: 50px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        .job-box {
+            margin-bottom: 30px;
+        }
+
+            .job-box img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .job-box h3 {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .job-box p {
+                font-size: 16px;
+                color: #6c757d;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Your Dream Job</h1>
+                <p class="hero-subtitle">Discover a world of opportunities</p>
+                <a href="/Findjobs/Index" class="btn btn-primary cta-button">Browse Jobs</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container feature-box">
+        <div class="row">
+            <div class="col-md-4">
+                <i class="bi bi-award-fill feature-icon"></i>
+                <h2 class="feature-title">Skills &amp; Expertise</h2>
+                <p class="feature-description">Find jobs that match your skills and expertise to advance your career.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-briefcase-fill feature-icon"></i>
+                <h2 class="feature-title">Job Listings</h2>
+                <p class="feature-description">Explore a wide range of job listings from various industries and companies.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-building feature-icon"></i>
+                <h2 class="feature-title">Companies</h2>
+                <p class="feature-description">Discover reputable companies offering exciting job opportunities.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="job-box">
+                    <img src="https://via.placeholder.com/300" alt="Job Image">
+                    <h3>Job Title</h3>
+                    <p>Job description and details go here.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="job-box">
+                    <img src="https://via.placeholder.com/300" alt="Job Image">
+                    <h3>Job Title</h3>
+                    <p>Job description and details go here.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="job-box">
+                    <img src="https://via.placeholder.com/300" alt="Job Image">
+                    <h3>Job Title</h3>
+                    <p>Job description and details go here.</p>
+                </div>
+            </div>
+            <!-- Add more job boxes as needed -->
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+</body>
+</html>
