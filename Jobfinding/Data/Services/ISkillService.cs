@@ -1,14 +1,10 @@
-﻿using Jobfinding.Models;
+﻿using Jobfinding.Data.Base;
+using Jobfinding.Models;
 
 namespace Jobfinding.Data.Services
 {
-    public interface ISkillService
+    public interface ISkillService:IEntityBaseRepository<Skill>
     {
-        Task<IEnumerable<Skill>> GetAllAsync();
-
-        Task<Skill> GetByIdAsync(int id);
-        Task AddAsync(Skill skill);
-        Task<Skill> UpdateAsync(int id, Skill newSkill);
-        Task DeleteAsync(int id);
+     
     }
 }

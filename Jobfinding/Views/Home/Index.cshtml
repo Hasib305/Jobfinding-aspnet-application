@@ -13,7 +13,9 @@
         }
 
         .hero-section {
-            background-color: #f8f9fa;
+            background-image: url("background-image.jpg");
+            background-size: cover;
+            background-position: center;
             padding: 100px 0;
         }
 
@@ -26,12 +28,12 @@
             font-size: 48px;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #007bff;
+            color: #e9ecef;
         }
 
         .hero-subtitle {
             font-size: 24px;
-            color: #6c757d;
+            color: #e7e7e7;
             margin-bottom: 30px;
         }
 
@@ -39,12 +41,12 @@
             font-size: 18px;
             font-weight: bold;
             padding: 12px 30px;
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #008CBA;
+            border-color: #008CBA;
             color: #fff;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
-
             .cta-button:hover {
                 background-color: #0056b3;
                 border-color: #0056b3;
@@ -76,11 +78,21 @@
 
         .job-box {
             margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 450px;
         }
+
+            .job-box:hover {
+                transform: translateY(-5px);
+            }
 
             .job-box img {
                 width: 100%;
-                height: auto;
+                height: 200px;
+                object-fit: cover;
                 margin-bottom: 20px;
             }
 
@@ -97,7 +109,7 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid hero-section">
+   <div class="container-fluid hero-section" style="background-image: url('/Image/back.png');">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Find Your Dream Job</h1>
@@ -106,6 +118,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="container feature-box">
         <div class="row">
@@ -131,23 +144,44 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="job-box">
-                    <img src="https://via.placeholder.com/300" alt="Job Image">
-                    <h3>Job Title</h3>
-                    <p>Job description and details go here.</p>
+                    <img src="https://penji.co/wp-content/uploads/2022/10/4.-Evolution-freeware-co-logo.jpg" alt="Job Image">
+                    <h3>Software Engineer</h3>
+                    <p>Total pay for a Trainee Engineer is BDT 47,500 per month.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="job-box">
-                    <img src="https://via.placeholder.com/300" alt="Job Image">
-                    <h3>Job Title</h3>
-                    <p>Job description and details go here.</p>
+                    <img src="https://penji.co/wp-content/uploads/2022/10/1.-Grappler-Tech-and-Devs-logo.jpg" alt="Job Image">
+                    <h3>Brand Manager</h3>
+                    <p>Total pay for an Officer at Beximco Pharmaceuticals is BDT 33,500 per month.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="job-box">
-                    <img src="https://via.placeholder.com/300" alt="Job Image">
-                    <h3>Job Title</h3>
-                    <p>Job description and details go here.</p>
+                    <img src="https://penji.co/wp-content/uploads/2022/10/5.-Mothership-tech-house-logo.jpg" alt="Job Image">
+                    <h3>Pattern Master</h3>
+                    <p>Square Group Job Circular 2023 has been published on 26 &amp; 28 April 2023.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="job-box">
+                    <img src="https://penji.co/wp-content/uploads/2022/10/6.-Code-red-logo.jpg" alt="Job Image">
+                    <h3>Marketing Executive</h3>
+                    <p>Join our team as a Marketing Executive and drive growth in our organization.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="job-box">
+                    <img src="https://penji.co/wp-content/uploads/2022/10/8.-The-cabinet-managementy-sys-logo.jpg" alt="Job Image">
+                    <h3>Graphic Designer</h3>
+                    <p>We are looking for a talented Graphic Designer to create engaging visual content.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="job-box">
+                    <img src="https://penji.co/wp-content/uploads/2022/10/9.-Mercurial-operating-system-logo.jpg" alt="Job Image">
+                    <h3>Data Analyst</h3>
+                    <p>Join our Data Analytics team and help drive data-driven decision-making.</p>
                 </div>
             </div>
             <!-- Add more job boxes as needed -->

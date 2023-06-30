@@ -1,9 +1,10 @@
 ﻿using Jobfinding.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Jobfinding.Data
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -29,7 +30,15 @@ namespace Jobfinding.Data
         public DbSet<skills_findingjobs> skills_Findingjobs { get; set; }
         public DbSet<Jobs> Jobs { get; set; }
         public DbSet<Company> Companies { get; set; }
-        public DbSet<question_ans> question_anss { get; set; }
+        public DbSet<question_ans> question_anss { get; set; } 
+
+        public DbSet<Apply> Apply { get; set; }
+
+        public DbSet<Applyitem>Applyitems { get; set; }
+
+        public DbSet<ApplyCartItem>ApplyCartItems { get; set; }
+
+          
 
 
          

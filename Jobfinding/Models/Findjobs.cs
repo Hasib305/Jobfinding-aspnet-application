@@ -1,10 +1,11 @@
-﻿using Jobfinding.Data.Enums;
+﻿using Jobfinding.Data.Base;
+using Jobfinding.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Jobfinding.Models
 {
-    public class Findjobs
+    public class Findjobs:IEntityBase
     { 
 
         [Key]

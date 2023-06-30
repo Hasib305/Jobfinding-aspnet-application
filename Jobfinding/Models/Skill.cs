@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Jobfinding.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jobfinding.Models
 {
-    public class Skill
+    public class Skill: IEntityBase
     {
         [Key]
         public int Id { get; set; }

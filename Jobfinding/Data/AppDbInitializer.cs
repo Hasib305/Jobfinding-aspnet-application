@@ -1,5 +1,7 @@
 ﻿using Jobfinding.Data.Enums;
+using Jobfinding.Data.Static;
 using Jobfinding.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Jobfinding.Data
 {
@@ -209,8 +211,48 @@ Info = "Boshundhara Group is one of the largest industrial conglomerates in Bang
                     context.SaveChanges();
                 }
 
-                if (!context.skills_Findingjobs.Any())
-                {
+                if (!context.skills_Findingjobs.Any()) {
+                    context.skills_Findingjobs.AddRange(new List<skills_findingjobs>()
+                    {
+
+                    new skills_findingjobs()
+                    {
+
+                        FindjobsId = 15,
+                        SkillId = 6
+
+                        },
+                     new skills_findingjobs()
+                    {
+
+                        FindjobsId = 16,
+                        SkillId = 7
+
+                        },
+                      new skills_findingjobs()
+                    {
+
+                        FindjobsId = 17,
+                        SkillId = 8
+
+                        },
+                       new skills_findingjobs()
+                    {
+
+                        FindjobsId = 18,
+                        SkillId = 9
+
+                        },
+                        new skills_findingjobs()
+                    {
+
+                        FindjobsId = 19,
+                        SkillId = 10
+
+                        }
+                 }
+                    );
+                    context.SaveChanges();
 
                 }
                 
@@ -224,5 +266,53 @@ Info = "Boshundhara Group is one of the largest industrial conglomerates in Bang
 
             }
         }
+
+        public static async Task SeedUserAndRolesAsync(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope =applicationBuilder.ApplicationServices.CreateScope())
+            {
+                var roleManager =serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                if (!await roleManager.RoleExistsAsync(UserRoles.Employer))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Employer));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Seeker))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Seeker));
+
+                //Users
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                string empUserEmail = "hasib@gmail.com";
+
+                var empUser = await userManager.FindByEmailAsync(empUserEmail);
+                if (empUser == null)
+                {
+                    var newempUser = new ApplicationUser()
+                    {
+                        FullName = "Emp User",
+                        UserName = "Emp-user",
+                        Email = empUserEmail,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newempUser, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newempUser, UserRoles.Employer);
+                }
+
+
+                string appUserEmail = "user@gmail.com";
+
+                var appUser = await userManager.FindByEmailAsync(appUserEmail);
+                if (appUser == null)
+                {
+                    var newAppUser = new ApplicationUser()
+                    {
+                        FullName = "Application User",
+                        UserName = "app-user",  
+                        Email = appUserEmail,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAppUser, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.Seeker);
+                }
+            }
+        }       
+            
     }
 }
